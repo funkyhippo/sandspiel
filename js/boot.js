@@ -7,7 +7,7 @@ function sleep(ms) {
 
 async function boot(width, height) {
   window.paused = false;
-  fetch("https://i.imgur.com/rzl9R6A.png") // Get an image to export in
+  fetch("https://i.imgur.com/xnpRFfJ.png") // Get an image to export in
     .then((res) => res.blob())
     .then((blob) => {
       var url = URL.createObjectURL(blob);
@@ -42,8 +42,10 @@ async function boot(width, height) {
           let species = undefined;
           if (num === 0) {
             continue;
-          } else if (num > 0 && num < 2500) {
+          } else if (num > 0 && num < 1000) {
             species = Species.Fire;
+          } else if (num >= 1000 && num < 2500) {
+            species = Species.Rocket;
           } else if (num >= 2500 && num < 5000) {
             species = Species.Acid;
           } else if (num >= 5000 && num < 10000) {
