@@ -1,6 +1,13 @@
 <meta charset="utf-8"/>
 
-# sandspiel
+# sandspiel, forked
+
+## Modified Build Instructions
+
+The [main page](https://guya.moe/pages/why/) is bootstrapped by GH Pages serving the static files. Thus, every new deploy should also be accompanied with an update on the admin end of the page.
+
+
+---
 
 "Imagine the cool phenomenon when the wind blows the falling leaves. This game simulates the phenomenon with powder (dots)!" -DAN-BALL
 
