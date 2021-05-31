@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://funkyhippo.github.io/sandspiel/precache-manifest.99a5cf02e73bc18752036b8aed25f330.js"
+  "https://funkyhippo.github.io/sandspiel/precache-manifest.4df6681642cc56711ba3e4ee4b8ec885.js"
 );
 
 self.addEventListener('message', (event) => {
