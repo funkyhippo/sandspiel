@@ -1,4 +1,3 @@
-import { Species } from "../crate/pkg";
 import { memory } from "../crate/pkg/sandtable_bg";
 
 function sleep(ms) {
@@ -6,6 +5,7 @@ function sleep(ms) {
 }
 
 async function boot(width, height) {
+  window.paused = false;
   fetch("https://i.imgur.com/jzwSmsC.png") // Get an image to export in
     .then((res) => res.blob())
     .then((blob) => {

@@ -5,8 +5,6 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 const WasmPackPlugin = require("@wasm-tool/wasm-pack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-const { GenerateSW } = require("workbox-webpack-plugin");
-
 module.exports = {
   entry: "./js/bootstrap.js",
   output: {
@@ -34,7 +32,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
-    new GenerateSW({ navigateFallback: "index.html" }),
   ],
   module: {
     rules: [
