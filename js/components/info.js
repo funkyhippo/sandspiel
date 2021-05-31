@@ -4,45 +4,18 @@ const Info = () => {
   return (
     <div className="Info">
       <h1>Sandspiel </h1>
+      <br></br>
       <p>
-        Created by <a href="https://maxbittker.com">max bittker</a>
+        Created by <a href="https://maxbittker.com">max bittker</a>, modified by
+        funkyhippo
       </p>
+      <br></br>
+      <p>
+        Make sure you play the original{" "}
+        <a href="https://sandspiel.club/">here</a>!
+      </p>
+      <br></br>
       <hr />
-      <br />
-      <p>
-        Welcome, and thanks for coming by! I hope that you enjoy exploring this
-        small game, and it brings you some calm.{" "}
-      </p>
-      <p>
-        Growing up, "falling sand" games like this one provided me hours of
-        entertainment and imagination. I want to particularly thank ha55ii's{" "}
-        <a href="https://dan-ball.jp/en/javagame/dust/">Powder Game</a> as the
-        primary inspiration for sandspiel.
-      </p>
-      <br />
-      <p>
-        If you want to read more the inspiration, architecture, and history of
-        the game, I wrote a blog post (it gets technical in the middle):&nbsp;
-        <a href="https://maxbittker.com/making-sandspiel">Making Sandspiel</a>
-      </p>
-      <br />
-      <p>
-        If you'd like, you can view the{" "}
-        <a href="https://github.com/maxbittker/sandspiel">source code</a> or{" "}
-        <a href="https://github.com/maxbittker/sandspiel/issues">report bugs</a>{" "}
-        on github or feel free to reach out on twitter and I'll try to answer!
-      </p>
-      <br />
-      <p>
-        Lastly, I want to say that if you enjoy this game or share your artwork
-        on it, your opinion is important to me and I want to do my best to
-        ensure sandspiel is a friendly and kind place to play, without bullying,
-        racism, or homophobia. If something is wrong or there's some way I can
-        help, feel free to contact me at <a href="mailto:maxbittker@gmail.com">maxbittker@gmail.com</a> or <a href="https://twitter.com/maxbittker">@maxbittker on twitter.</a>
-      </p>
-      <br />
-      <hr />
-      <br />
       <h2>Element Information:</h2>
       <h4>Wall </h4>
       Indestructible

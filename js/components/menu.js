@@ -1,8 +1,9 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 
 const Menu = ({ close, children }) => {
-  return (
+  return ReactDOM.createPortal(
     <div className="menu-scrim">
       <div className={"menu"}>
         {children}
@@ -10,7 +11,8 @@ const Menu = ({ close, children }) => {
           <button> x</button>
         </Link>
       </div>
-    </div>
+    </div>,
+    document.getElementById("container")
   );
 };
 export default Menu;

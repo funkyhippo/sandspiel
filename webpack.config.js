@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: dist,
     filename: "[name].[contenthash].js",
-    publicPath: "/",
+    publicPath: "https://funkyhippo.github.io/sandspiel/",
   },
   devServer: {
     contentBase: dist,
@@ -31,7 +31,9 @@ module.exports = {
       "manifest.json",
       "assets/*",
     ]),
-    new HtmlWebpackPlugin({ template: "index.html" }),
+    new HtmlWebpackPlugin({
+      template: "index.html",
+    }),
     new GenerateSW({ navigateFallback: "index.html" }),
   ],
   module: {

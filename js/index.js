@@ -1,22 +1,22 @@
-import * as Sentry from "@sentry/browser";
-import { Integrations } from "@sentry/tracing";
-import { Wasm as WasmIntegration } from "@sentry/wasm";
+// import * as Sentry from "@sentry/browser";
+// import { Integrations } from "@sentry/tracing";
+// import { Wasm as WasmIntegration } from "@sentry/wasm";
 import { boot } from "./boot";
 
-Sentry.init({
-  dsn:
-    "https://4bf8c3ab764f40569d573fc4021efe40@o40136.ingest.sentry.io/1331284",
+// Sentry.init({
+//   dsn:
+//     "https://4bf8c3ab764f40569d573fc4021efe40@o40136.ingest.sentry.io/1331284",
 
-  // Alternatively, use `process.env.npm_package_version` for a dynamic release version
-  // if your build tool supports it.
-  integrations: [new Integrations.BrowserTracing(), new WasmIntegration()],
+//   // Alternatively, use `process.env.npm_package_version` for a dynamic release version
+//   // if your build tool supports it.
+//   integrations: [new Integrations.BrowserTracing(), new WasmIntegration()],
 
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
-  tracesSampleRate: 0.01,
-});
-import "./api";
+//   // Set tracesSampleRate to 1.0 to capture 100%
+//   // of transactions for performance monitoring.
+//   // We recommend adjusting this value in production
+//   tracesSampleRate: 0.01,
+// });
+// import "./api";
 import { Universe } from "../crate/pkg";
 
 import { startWebGL } from "./render";
@@ -131,7 +131,6 @@ let resize = () => {
   ui.style = uiStyle;
   canvas.style = canvasStyle;
   canvas2.style = canvasStyle;
-  document.getElementsByClassName("adslot_1")[0].style = adStyle;
 };
 
 resize();
@@ -157,6 +156,7 @@ renderLoop();
 window.u = universe;
 
 boot(width, height);
+
 function reset() {
   fluid.reset();
   fluid.update();
@@ -173,5 +173,6 @@ document.addEventListener("keydown", function (event) {
   }
 });
 
-(adsbygoogle = window.adsbygoogle || []).push({});
+
+
 export { canvas, width, height, universe, reset };

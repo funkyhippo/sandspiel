@@ -366,19 +366,6 @@ class Index extends React.Component {
           )}
         </button>
 
-        {!window.location.pathname.includes("school") && (
-          <>
-            <button onClick={() => this.upload()}>Upload</button>
-            <Link
-              to={{
-                pathname: "/browse/",
-                hash,
-              }}
-            >
-              <button>Browse</button>
-            </Link>
-          </>
-        )}
 
         <button onClick={() => this.reset()}>Reset</button>
         <Link
@@ -429,45 +416,6 @@ class Index extends React.Component {
             ElementButton(n, selectedElement, (id) =>
               this.setState({ selectedElement: id })
             )
-          )}
-        <span className="promo">
-          *new*{" "}
-          <a href="https://orb.farm" target="_blank">
-            orb.farm
-          </a>
-        </span>
-        {this.state.currentSubmission && (
-          <div className="submission-title">
-            <button onClick={() => this.incScore()}>
-              +♡{this.state.currentSubmission.data.score}{" "}
-            </button>
-            {this.state.currentSubmission.data.title}
-          </div>
-        )}
-
-        {this.state.submissionMenuOpen && (
-          <Menu close={() => this.closeMenu()}>
-            <h4>Share your creation with the people! (try using #hashtags)</h4>
-            <p>
-              Please be nice. Users who post hateful or sexually explicit
-              content will be banned.
-            </p>
-            <img src={this.state.data.dataURL} className="submissionImg" />
-            <SignInButton>
-              <div style={{ display: "flex" }}>
-                <input
-                  placeholder="title"
-                  onChange={(e) => this.setState({ title: e.target.value })}
-                />
-                <button
-                  disabled={this.state.submitting || this.rateLimited()}
-                  onClick={() => this.submit()}
-                >
-                  Submit
-                </button>
-              </div>
-            </SignInButton>
-          </Menu>
         )}
       </React.Fragment>
     );
