@@ -6,6 +6,8 @@
 
 The [main page](https://guya.moe/pages/why/) is bootstrapped by GH Pages serving the static files. Thus, every new deploy should also be accompanied with an update on the admin end of the page.
 
+You'll probably also want to change `output.publicPath` to `/` if you're developing locally. Currently, it doesn't respect `devServer.publicPath` and I can't be assed to figure it out.
+
 
 ---
 

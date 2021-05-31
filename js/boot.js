@@ -1,3 +1,4 @@
+import { Species } from "../crate/pkg/sandtable";
 import { memory } from "../crate/pkg/sandtable_bg";
 
 function sleep(ms) {
@@ -6,7 +7,7 @@ function sleep(ms) {
 
 async function boot(width, height) {
   window.paused = false;
-  fetch("https://i.imgur.com/jzwSmsC.png") // Get an image to export in
+  fetch("https://i.imgur.com/rzl9R6A.png") // Get an image to export in
     .then((res) => res.blob())
     .then((blob) => {
       var url = URL.createObjectURL(blob);
@@ -31,11 +32,34 @@ async function boot(width, height) {
           window.u.cells(),
           width * height * 4
         );
-
         window.stopboot = true;
 
-        for (var i = 0; i < width * height * 4; i++) {
-          cellsData[i] = imgData.data[i];
+        for (var i = 0; i < width * height * 4; i += 4) {
+          let num = 0;
+          for (let j = 0; j < 4; j++) {
+            num += imgData.data[i + j] << ((3 - j) * 2);
+          }
+          let species = undefined;
+          if (num === 0) {
+            continue;
+          } else if (num > 0 && num < 2500) {
+            species = Species.Fire;
+          } else if (num >= 2500 && num < 5000) {
+            species = Species.Acid;
+          } else if (num >= 5000 && num < 10000) {
+            species = Species.Oil;
+          } else if (num >= 10000 && num < 15000) {
+            species = Species.Mite;
+          } else if (num >= 15000 && num < 20000) {
+            species = Species.Dust;
+          } else if (num >= 20000 && num < 21000) {
+            species = Species.Plant;
+          } else if (num >= 21000 && num < 24000) {
+            species = Species.Wood;
+          } else {
+            species = Species.Lava;
+          }
+          cellsData[i] = species;
         }
         window.u.flush_undos();
         window.u.push_undo();
